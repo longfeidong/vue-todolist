@@ -9,7 +9,7 @@
     </ul>
     <p>{{lists}}</p>
     <p>共{{number}}条</p>
-    <div><button @click="reverse">翻转</button></div>
+    <div><button @click="reverse">翻转</button><button @click="sort">排序</button></div>
   </div>
 </template>
 
@@ -51,6 +51,12 @@ export default {
     },
     reverse: function () {
       this.lists.reverse()
+    },
+    sortNumber: function (a, b) {
+      return a - b
+    },
+    sort: function () {
+      this.lists.sort(this.sortNumber)
     }
   },
   beforeCreate: function () {
