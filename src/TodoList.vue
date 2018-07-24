@@ -9,6 +9,7 @@
     </ul>
     <p>{{lists}}</p>
     <p>共{{number}}条</p>
+    <div><button @click="reverse">翻转</button></div>
   </div>
 </template>
 
@@ -47,6 +48,9 @@ export default {
     },
     handleEdit: function (index, content) {
       this.lists.splice(index, 1, content)
+    },
+    reverse: function () {
+      this.lists.reverse()
     }
   },
   beforeCreate: function () {

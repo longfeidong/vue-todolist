@@ -29,6 +29,7 @@ export default {
         })
       } else {
         console.log(this.$refs.input.value)
+        // 订阅发布模式
         this.$emit('edit', this.index, this.$refs.input.value)
         this.msg1 = '修改'
         this.bool = true
