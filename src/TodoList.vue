@@ -56,6 +56,12 @@ export default {
       return a - b
     },
     sort: function () {
+      for (var i = 0; i < this.lists.length; i++) {
+        if (typeof this.lists[i] !== 'string') {
+          alert('非数字不排序')
+          return
+        }
+      }
       this.lists.sort(this.sortNumber)
     }
   },
